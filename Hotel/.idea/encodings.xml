@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/src/cla/Hotel.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/cla/People.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/cla/Peoples.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/hotel/Hotel.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/hotel/HotelRoom.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/hotel/HotelSystem.java" charset="GBK" />
+  </component>
+</project>
