@@ -23,7 +23,8 @@ public class Main
              cmd = in.next();
             if(Objects.equals(cmd, "add"))
             {
-                queue.addData(new Data(in.nextInt()));
+                if(!queue.addData(new Data(in.nextInt())))
+                    System.out.println("full");
             }
             else if(Objects.equals(cmd, "get"))
             {
