@@ -1,4 +1,6 @@
 package BinarySreach;
 
-public class Main {
+public class Main
+{
+
 }
