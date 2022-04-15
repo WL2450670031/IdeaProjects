@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/Demo/src/BankTest_5_7/Account.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/Demo/src/BankTest_5_7/BankingAccount.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/Demo/src/BankTest_5_7/FixedDepositAccount.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/MOOC/src/M10.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/MOOC/src/M11.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/MOOC/src/M12.java" charset="GBK" />
