@@ -15,7 +15,7 @@ public class Main
 
         String cmd;
 
-        System.out.println("<队列>");
+        System.out.println("<循环队列>");
         System.out.println("<命令：add,get,printAll,exit>");
         while(true)
         {
@@ -44,8 +44,5 @@ public class Main
                 System.out.println("命令错误");
             }
         }
-
-
     }
-
 }
