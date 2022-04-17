@@ -12,6 +12,7 @@ public class BinaryTree
     public BinaryTree()
     {
         head = null;
+        length = 0;
     }
 
     public void PreCreate( Node node,int rl)//前序方式创建二叉树
@@ -32,6 +33,7 @@ public class BinaryTree
         Data data = new Data();
         data.setA(in.nextInt());
         node.setData(data);
+        length++;
 
         System.out.println("扣1继续输入左右孩子，否则返回上一个结点");
         System.out.print("->");

@@ -1,5 +1,4 @@
 package ArrayQueue;
-
 //循环队列，front指向的数组不存储数据
 
 import java.util.Objects;
