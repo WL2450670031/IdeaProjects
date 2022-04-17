@@ -10,7 +10,7 @@ public class Main
         BinaryTree binaryTree = new BinaryTree();
 
         BinaryTreeNode binary = new BinaryTreeNode();
-        binaryTree.PreCreate(binary,2);
+        binaryTree.PreCreate(binary,2);//建立二叉树
 
         level(binary);
     }
@@ -20,13 +20,17 @@ public class Main
         LinkQueue linkQueue = new LinkQueue();
         BinaryTreeNode binaryTreeNode;
 
-        if(tree.data != null)
+        if(tree.data != null)//如果二叉树不为空,则进行下一步
         {
-            linkQueue.addData(new LinkedNode(tree));
+            linkQueue.addData(new LinkedNode(tree));//二叉树根结点入队
+
             while(linkQueue.length != 0)
             {
-                binaryTreeNode = linkQueue.getData().getQueueData();
-                System.out.print(binaryTreeNode);
+                binaryTreeNode = linkQueue.getData().getQueueData();//从队列取出一个结点
+
+                System.out.print(binaryTreeNode);//输出出队的结点
+
+                //访问其左右孩子
                 if(binaryTreeNode.left != null) linkQueue.addData(new LinkedNode(binaryTreeNode.left));
                 if(binaryTreeNode.right != null) linkQueue.addData(new LinkedNode(binaryTreeNode.right));
             }

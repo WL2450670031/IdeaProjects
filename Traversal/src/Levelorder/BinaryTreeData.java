@@ -1,5 +1,7 @@
 package Levelorder;
 
+//二叉树数据域
+
 public class BinaryTreeData
 {
     int a;

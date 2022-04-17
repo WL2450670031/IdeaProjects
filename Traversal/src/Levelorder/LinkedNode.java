@@ -1,5 +1,8 @@
 package Levelorder;
 
+
+//链表队列结点
+
 public class LinkedNode
 {
     private BinaryTreeNode data;

@@ -1,5 +1,7 @@
 package Levelorder;
 
+//队列操作
+
 public class LinkQueue
 {
     final LinkedNode head;//头结点
@@ -14,7 +16,7 @@ public class LinkQueue
         rear = 1;
     }
 
-    public void addData(LinkedNode node)
+    public void addData(LinkedNode node)//入队
     {
         LinkedNode p = head;
         LinkedNode q = p.getQueueNext();
@@ -28,7 +30,7 @@ public class LinkQueue
         rear++;
     }
 
-    public LinkedNode getData()
+    public LinkedNode getData()//出队
     {
         LinkedNode p = head;//头结点
         LinkedNode q = p.getQueueNext();//第二个结点
@@ -50,7 +52,7 @@ public class LinkQueue
         }
     }
 
-    public void printAll()
+    public void printAll()//输出队列所有数据
     {
         LinkedNode p = head;//头结点
         LinkedNode q = p.getQueueNext();//第二个结点

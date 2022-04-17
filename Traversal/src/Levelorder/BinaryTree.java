@@ -2,6 +2,8 @@ package Levelorder;
 
 import java.util.Scanner;
 
+//二叉树操作
+
 public class BinaryTree
 {
     BinaryTreeNode head;//根结点
@@ -19,11 +21,11 @@ public class BinaryTree
     {
         if(rl == 1)
         {
-            System.out.print("右,");
+            System.out.print("其右,");
         }
         else if(rl == 0)
         {
-            System.out.print("左,");
+            System.out.print("其左,");
         }
         else
         {
@@ -32,17 +34,17 @@ public class BinaryTree
 
         BinaryTreeData data = new BinaryTreeData();
         data.setA(in.nextInt());
-        node.setData(data);
+        node.setData(data);//输入根结点
         length++;
 
-        System.out.println("扣1继续输入左右孩子，否则返回上一个结点");
+        System.out.println("扣1继续输入左孩子，扣0输入右孩子或者返回");
         System.out.print("->");
         if(in.nextInt() == 1)//如果输入数据，那么才进行下一个结点的操作
         {
             node.left = new BinaryTreeNode();
             node.right = new BinaryTreeNode();
-            PreCreate(node.left,0);
-            PreCreate(node.right,1);
+            PreCreate(node.left,0);//创建左子树
+            PreCreate(node.right,1);//创建右子树
         }
     }
 }
