@@ -11,26 +11,36 @@ public class BinaryTree
 
     public BinaryTree()
     {
-        super();
+        head = null;
     }
 
-    public void PreCreate( Node node,boolean rl)//前序方式创建二叉树
+    public void PreCreate( Node node,int rl)//前序方式创建二叉树
     {
-        if(rl)
+        if(rl == 1)
         {
             System.out.print("右,");
         }
-        else
+        else if(rl == 0)
         {
             System.out.print("左,");
         }
-        System.out.println("扣1输入，否则置空");
+        else
+        {
+            System.out.print("根,");
+        }
+
+        Data data = new Data();
+        data.setA(in.nextInt());
+        node.setData(data);
+
+        System.out.println("扣1继续输入左右孩子，否则返回上一个结点");
         System.out.print("->");
         if(in.nextInt() == 1)//如果输入数据，那么才进行下一个结点的操作
         {
-            node.data.setA(in.nextInt());
-            PreCreate(head.left,false);
-            PreCreate(head.right,true);
+            node.left = new Node();
+            node.right = new Node();
+            PreCreate(node.left,0);
+            PreCreate(node.right,1);
         }
     }
 }

@@ -4,11 +4,15 @@ import java.util.Scanner;
 
 public class Main
 {
-    Scanner in = new Scanner(System.in);
+    public static void main(String[] args)
+    {
+        Scanner in = new Scanner(System.in);
 
-    BinaryTree binaryTree = new BinaryTree();
+        BinaryTree binaryTree = new BinaryTree();
 
-    Node head = new Node();
+        Node head = new Node();
 
-
+        binaryTree.PreCreate(head,2);
+        System.out.print("haha");
+    }
 }

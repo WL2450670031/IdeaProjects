@@ -10,12 +10,6 @@ public class Node
     {
         super();
     }
-
-    public Node(Data data)
-    {
-        this.data = data;
-    }
-
     public Data getData() {
         return data;
     }
