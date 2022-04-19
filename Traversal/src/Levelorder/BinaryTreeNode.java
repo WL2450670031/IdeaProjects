@@ -38,6 +38,6 @@ public class BinaryTreeNode
 
     @Override
     public String toString() {
-        return data +" ";
+        return data +" left->" + left.data + data + " right->" + right.data;
     }
 }

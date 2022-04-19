@@ -24,15 +24,17 @@ public class Main
         {
             linkQueue.addData(new LinkedNode(tree));//二叉树根结点入队
 
+            System.out.println("当输入一个结点时，程序会要求继续输入该结点的左右孩子,\n然后扣0不输入左孩子，再扣0不输入右孩子");
+
             while(linkQueue.length != 0)
             {
                 binaryTreeNode = linkQueue.getData().getQueueData();//从队列取出一个结点
 
-                System.out.print(binaryTreeNode);//输出出队的结点
+                System.out.println(binaryTreeNode);//输出出队的结点
 
                 //访问其左右孩子
-                if(binaryTreeNode.left != null) linkQueue.addData(new LinkedNode(binaryTreeNode.left));
-                if(binaryTreeNode.right != null) linkQueue.addData(new LinkedNode(binaryTreeNode.right));
+                if(binaryTreeNode.left.data != null) linkQueue.addData(new LinkedNode(binaryTreeNode.left));
+                if(binaryTreeNode.right.data != null) linkQueue.addData(new LinkedNode(binaryTreeNode.right));
             }
         }
     }
