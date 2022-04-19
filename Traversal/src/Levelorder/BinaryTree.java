@@ -21,26 +21,24 @@ public class BinaryTree
     {
         if(rl == 1)
         {
-            System.out.print("其右,");
+            System.out.print("其右");
         }
         else if(rl == 0)
         {
-            System.out.print("其左,");
+            System.out.print("其左");
         }
         else
         {
-            System.out.print("根,");
+            System.out.print("根");
         }
-
-        BinaryTreeData data = new BinaryTreeData();
-        data.setA(in.nextInt());
-        node.setData(data);//输入根结点
-        length++;
-
-        System.out.println("扣1继续输入左孩子，扣0输入右孩子或者返回");
+        System.out.println("扣1继续输入，扣0返回");
         System.out.print("->");
         if(in.nextInt() == 1)//如果输入数据，那么才进行下一个结点的操作
         {
+            BinaryTreeData data = new BinaryTreeData();
+            data.setA(in.nextInt());
+            node.setData(data);//输入根结点
+            length++;
             node.left = new BinaryTreeNode();
             node.right = new BinaryTreeNode();
             PreCreate(node.left,0);//创建左子树
