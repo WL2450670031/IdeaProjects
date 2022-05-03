@@ -28,6 +28,6 @@ public class Linked_Node
 
     @Override
     public String toString() {
-        return " data : " + data + "->" + "next_Data : " + next.getData();
+        return data + " -> " + next +" ";
     }
 }

@@ -24,6 +24,6 @@ public class Linked_Data
 
     @Override
     public String toString() {
-        return "number=" + number;
+        return number +"";
     }
 }

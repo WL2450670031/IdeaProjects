@@ -152,7 +152,7 @@ public class Linked_List
         {
             for(int i = 1;i < return_length();i++)
             {
-                System.out.println(i + " " + p);
+                System.out.println("数据"+i + ": " + p);
                 p = p.getNext();
             }
         }
