@@ -44,9 +44,22 @@ public class Linked_List
         Linked_Node p = head;
         Linked_Node q;
 
-        if(return_length() < pos || pos < 1)
+        if(return_length() < pos || pos < 1)//如果要插入的地方越界 或者 pos值错误，就返回false
         {
             return false;
+        }
+        else if(return_length() == pos+1)//要插入的地方是链表的最后一个数据.
+        {
+            while(pos-- > 1)
+            {
+                p = p.getNext();
+            }
+            Linked_Node next = new Linked_Node();
+            next.setData(data);//新建结点
+            p.setNext(next);//将结点插入到指定位置
+            ++length;
+
+            return true;
         }
         else
         {
@@ -102,7 +115,7 @@ public class Linked_List
     {
         Linked_Node p = head;
 
-        if(return_length() == 1 || return_length() <= pos || pos <1)
+        if(return_length() == 1 || return_length() <= pos || pos <1)//链表只有头结点，或者目表越界，或者pos值错误
         {
             return false;
         }
@@ -117,11 +130,11 @@ public class Linked_List
         }
     }
 
-    public Linked_Data get_data(int pos)
+    public Linked_Data get_data(int pos)//查找第pos个数据
     {
         Linked_Node p = head;
 
-        if(return_length() == 1 || return_length() <= pos || pos <1)
+        if(return_length() == 1 || return_length() <= pos || pos <1)//链表只有头结点，或者目表越界，或者pos值错误
         {
             return null;
         }
@@ -142,9 +155,9 @@ public class Linked_List
 
     public void print_All()//输出所有数据
     {
-        Linked_Node p = head.getNext();//头结点
+        Linked_Node p = head.getNext();//第一个数据
 
-        if(return_length() == 0)
+        if(return_length() == 1)//如果没有数据返回空
         {
             System.out.println("null");
         }
