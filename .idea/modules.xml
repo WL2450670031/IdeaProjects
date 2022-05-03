@@ -18,6 +18,7 @@
       <module fileurl="file://$PROJECT_DIR$/hhh/hhh.iml" filepath="$PROJECT_DIR$/hhh/hhh.iml" />
       <module fileurl="file://$PROJECT_DIR$/lanqiaobei/lanqiaobei.iml" filepath="$PROJECT_DIR$/lanqiaobei/lanqiaobei.iml" />
       <module fileurl="file://$PROJECT_DIR$/luogu/luogu.iml" filepath="$PROJECT_DIR$/luogu/luogu.iml" />
+      <module fileurl="file://$PROJECT_DIR$/recursion/recursion.iml" filepath="$PROJECT_DIR$/recursion/recursion.iml" />
       <module fileurl="file://$PROJECT_DIR$/stack/stack.iml" filepath="$PROJECT_DIR$/stack/stack.iml" />
     </modules>
   </component>
