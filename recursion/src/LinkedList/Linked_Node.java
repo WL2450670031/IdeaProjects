@@ -28,9 +28,6 @@ public class Linked_Node
 
     @Override
     public String toString() {
-        if(next != null)
-            return data + " -> " + next +" ";
-        else
             return data + "";
     }
 }
