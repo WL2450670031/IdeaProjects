@@ -1,5 +1,6 @@
 package LinkedList;
 //标准链表
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Linked_List
@@ -14,6 +15,7 @@ public class Linked_List
     6.向链表里面某个位置插入数据 *
     7.返回链表长度（算头结点）*
     8.输出链表全部数据 *
+    9.链表排序 *
      */
 
     private final Linked_Node head;
@@ -148,6 +150,34 @@ public class Linked_List
         }
     }
 
+    public boolean search()
+    {
+        Linked_Node p = head.getNext();
+        int[] num = new int[length-1];
+
+        if(length == 1)
+        {
+            return false;
+        }
+        else
+        {
+            for (int i = 0; i < length - 1; i++)//取出数据，存放至数组。
+            {
+                num[i] = p.getData().getNumber();
+                p = p.getNext();
+            }
+
+            Arrays.sort(num);//对数据进行排序
+            p = head.getNext();//p初始化
+
+            for (int i = 0; i < length-1; i++)//将排序完了的数据放回去
+            {
+                p.setData(new Linked_Data(num[i]));
+                p = p.getNext();
+            }
+            return true;
+        }
+    }
     public Linked_Node return_Head_Node()//返回头结点
     {
         return head;
