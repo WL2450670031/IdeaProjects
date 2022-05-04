@@ -11,7 +11,7 @@ public class Main
     {
         Scanner in = new Scanner(System.in);
         int length;
-
+        recursion_Search search = new recursion_Search();
         Linked_List l1 = new Linked_List();
         Linked_List l2 = new Linked_List();
         Linked_List l = new Linked_List();//存储结果的链表
@@ -27,32 +27,10 @@ public class Main
         l1.search();
         l2.search();//将两个链表进行排序
 
-        head.setNext(recursion_search(l1.return_Head_Node().getNext(),l2.return_Head_Node().getNext()));//传头数据
+        head.setNext(search.recursion_search(l1.return_Head_Node().getNext(),l2.return_Head_Node().getNext()));//传头数据
 
         l.setHead(head);
         l.setLength(length);
         l.print_All();
-    }
-
-    public static Linked_Node recursion_search(Linked_Node l1,Linked_Node l2)//递归链表排序
-    {
-        if(l1 == null)
-        {
-            return l2;
-        }
-        else if(l2 == null)
-        {
-            return l1;
-        }
-        else if(l1.getData().getNumber() > l2.getData().getNumber())//如果p>q
-        {
-            l2.setNext(recursion_search(l1,l2.getNext()));//将为进行排序的链表继续排序
-            return l2;//返回较小的值
-        }
-        else
-        {
-            l1.setNext(recursion_search(l1.getNext(),l2));
-            return l1;
-        }
     }
 }
