@@ -31,6 +31,7 @@ public class Main
 
         l.setHead(head);
         l.setLength(length);
+
         l.print_All();
     }
 }
