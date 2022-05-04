@@ -18,7 +18,7 @@ public class Linked_List
     9.链表排序 *
      */
 
-    private final Linked_Node head;
+    private Linked_Node head;
     private int length;
     Scanner in = new Scanner(System.in);
 
@@ -28,6 +28,15 @@ public class Linked_List
         length = 1;
     }
 
+    public void setHead(Linked_Node head)
+    {
+        this.head = head;
+    }
+
+    public void setLength(int length)
+    {
+        this.length = length;
+    }
     public void set_Linked_List(int num)//建立链表，然后向里面加入数据
     {
         Linked_Node p = head;

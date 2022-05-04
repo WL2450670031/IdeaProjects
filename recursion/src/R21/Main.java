@@ -11,18 +11,44 @@ public class Main {
     public static void main(String[] args)
     {
         Scanner in = new Scanner(System.in);
-
+        int length;
         Linked_List l1 = new Linked_List();
         Linked_List l2 = new Linked_List();
-
+        Linked_List l = new Linked_List();
+        Linked_Node head = new Linked_Node();
         System.out.println("l1长度:");
         l1.set_Linked_List(in.nextInt());
-        l1.print_All();
+        System.out.println("l2长度:");
+        l2.set_Linked_List(in.nextInt());
+
+        length = l1.return_length()+l2.return_length()-1;
         l1.search();
-        l1.print_All();
-//        System.out.println("l2长度:");
-//        l2.set_Linked_List(in.nextInt());
+        l2.search();
+        head.setNext(recursion_search(l1.return_Head_Node().getNext(),l2.return_Head_Node().getNext()));//传头数据
+        l.setHead(head);
+        l.setLength(length);
+        l.print_All();
+    }
 
-
+    public static Linked_Node recursion_search(Linked_Node l1,Linked_Node l2)//递归链表排序
+    {
+        if(l1 == null)
+        {
+            return l2;
+        }
+        else if(l2 == null)
+        {
+            return l1;
+        }
+        else if(l1.getData().getNumber() > l2.getData().getNumber())//如果p>q
+        {
+            l2.setNext(recursion_search(l1,l2.getNext()));
+            return l2;
+        }
+        else
+        {
+            l1.setNext(recursion_search(l1.getNext(),l2));
+            return l1;
+        }
     }
 }
