@@ -4,6 +4,7 @@ import LinkedList.Linked_Node;
 
 public class recursion_Search
 {
+    //返回一个头结点也有数据的头结点
     public Linked_Node recursion_search(Linked_Node l1, Linked_Node l2)//递归链表排序
     {
         if(l1 == null)
