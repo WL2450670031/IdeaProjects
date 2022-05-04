@@ -1,14 +1,9 @@
-import java.util.Scanner;
-
 public class hello
 {
     public static void main(String[] args)
     {
-        Scanner scn=new Scanner(System.in);
-        int year=scn.nextInt();
-        if(year%4==0&&year%100!=0||year%400==0)
-            System.out.println(year+"ÊÇÈòÄê¡£");
-        else
-            System.out.println(year+"²»ÊÇÈòÄê¡£");
+        System.out.println("hello world!");
+        System.out.println("hello java!");
+        System.out.println("æˆ‘æ˜¯å´ä¹ã€‚");
     }
 }
