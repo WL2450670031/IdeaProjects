@@ -46,8 +46,8 @@ public class Main
         }
         else if(l1.getData().getNumber() > l2.getData().getNumber())//如果p>q
         {
-            l2.setNext(recursion_search(l1,l2.getNext()));
-            return l2;
+            l2.setNext(recursion_search(l1,l2.getNext()));//将为进行排序的链表继续排序
+            return l2;//返回较小的值
         }
         else
         {
