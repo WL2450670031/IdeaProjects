@@ -26,6 +26,17 @@ public class Linked_Node
         this.next = next;
     }
 
+    public boolean equals(Linked_Node node) {
+        if(this.data.equals(node.data))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
     @Override
     public String toString() {
         if(next != null)
