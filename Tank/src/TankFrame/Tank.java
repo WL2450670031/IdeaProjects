@@ -6,15 +6,16 @@ public class Tank
 {
     int x;
     int y;
-     int width = 50;
-     int height = 50;
+    int width = 50;
+    int height = 50;
     int speed;
     Dir dir;
     boolean moving = false;
     Tank_Frame tank_frame;
     boolean live;
 
-    public Tank() {
+    public Tank()
+    {
         super();
     }
 
@@ -62,19 +63,23 @@ public class Tank
         tank_frame.cannonballs.add(new Cannonball(this.x,this.y,this.dir,this.tank_frame));
     }
 
-    public void setMoving(boolean moving) {
+    public void setMoving(boolean moving)
+    {
         this.moving = moving;
     }
 
-    public void setX(int x) {
+    public void setX(int x)
+    {
         this.x = x;
     }
 
-    public void setY(int y) {
+    public void setY(int y)
+    {
         this.y = y;
     }
 
-    public void setDir(Dir dir) {
+    public void setDir(Dir dir)
+    {
         this.dir = dir;
     }
 }

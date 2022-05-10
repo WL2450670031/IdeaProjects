@@ -11,7 +11,8 @@ public class enemyTank extends Tank
         live = true;
     }
     @Override
-    public void paint(Graphics graphics) {
+    public void paint(Graphics graphics)
+    {
         if(!live)
         {
             graphics.drawString("消灭",this.x,this.y);
