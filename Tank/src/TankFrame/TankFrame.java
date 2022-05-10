@@ -74,12 +74,12 @@ public class TankFrame extends Frame
         graphics.drawImage(image,0,0,null);
     }
 
-    @Override
-
     /**
-     *<p>画笔告诉编译器：下面的方法是重写的方法,不写也行，最好写上，这样没有名字写错会报错，没有重写的方法会提示。
-     *系统自动调用，系统给的画笔</p>
+     *告诉编译器：下面的方法是重写的方法,不写也行，最好写上，这样名字写错会报错，没有重写的方法会提示。
+     *系统自动调用，
+     * @param graphics 系统给的画笔
      */
+    @Override
     public void paint(Graphics graphics)
     {
         graphics.drawString("子弹数量为:" + cannonballs.size(),10,60);

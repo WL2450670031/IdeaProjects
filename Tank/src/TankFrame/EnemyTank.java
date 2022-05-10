@@ -13,6 +13,7 @@ public class EnemyTank extends Tank
         y = 100;
         live = true;
     }
+
     @Override
     public void paint(Graphics graphics)
     {
