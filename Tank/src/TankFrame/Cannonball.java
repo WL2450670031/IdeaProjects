@@ -23,6 +23,7 @@ public class Cannonball
         this.y = y;
         this.dir = dir;
         this.tankFrame = tankFrame;
+        
     }
 
     public void paint(Graphics graphics)

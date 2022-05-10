@@ -75,9 +75,10 @@ public class TankFrame extends Frame
     }
 
     @Override
+
     /**
-     * 画笔告诉编译器：下面的方法是重写的方法,不写也行，最好写上，这样没有名字写错会报错，没有重写的方法会提示。
-     *系统自动调用，系统给的画笔
+     *<p>画笔告诉编译器：下面的方法是重写的方法,不写也行，最好写上，这样没有名字写错会报错，没有重写的方法会提示。
+     *系统自动调用，系统给的画笔</p>
      */
     public void paint(Graphics graphics)
     {
@@ -90,7 +91,8 @@ public class TankFrame extends Frame
             cannonballs.get(i).paint(graphics);
         }
         //使用下面这个循环的话：里面的迭代器打印，加上Cannonball的删除会报错，会发生越界
-//        for (Cannonball value : cannonballs) {
+//        for (Cannonball value : cannonballs)
+//        {
 //            value.paint(graphics);
 //        }
     }
