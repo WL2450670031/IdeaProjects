@@ -23,7 +23,7 @@ public class Cannonball
         this.y = y;
         this.dir = dir;
         this.tankFrame = tankFrame;
-        
+
     }
 
     public void paint(Graphics graphics)
@@ -32,9 +32,22 @@ public class Cannonball
         {
             tankFrame.cannonballs.remove(this);
         }
-        Color color = Color.BLACK;
-        graphics.setColor(color);
-        graphics.fillOval(x,y,width,height);
+        switch(dir)
+        {
+            case LEFT:
+                graphics.drawImage(ResourceMgr.ballRight,x-30,y+17,null);
+                break;
+            case RIGHT:
+                graphics.drawImage(ResourceMgr.ballRight,x+59,y+18,null);
+                break;
+            case UP:
+                graphics.drawImage(ResourceMgr.ballUp,x+19,y-28,null);
+                break;
+            case DOWN:
+                graphics.drawImage(ResourceMgr.ballUp,x+18,y+60,null);
+                break;
+            default:break;
+        }
         move();
     }
 
