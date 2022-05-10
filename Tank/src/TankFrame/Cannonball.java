@@ -2,6 +2,9 @@ package TankFrame;
 
 import java.awt.*;
 
+/**
+ * @author 吴乐
+ */
 public class Cannonball
 {
 
@@ -11,22 +14,22 @@ public class Cannonball
     Dir dir;
     static int width = 50;
     static int height = 50;
-    Tank_Frame tank_frame;
+    TankFrame tankFrame;
     boolean live;
-    public Cannonball(int x,int y,Dir dir,Tank_Frame tank_frame)
+    public Cannonball(int x, int y, Dir dir, TankFrame tankFrame)
     {
         live = true;
         this.x = x;
         this.y = y;
         this.dir = dir;
-        this.tank_frame = tank_frame;
+        this.tankFrame = tankFrame;
     }
 
     public void paint(Graphics graphics)
     {
         if(!live)
         {
-            tank_frame.cannonballs.remove(this);
+            tankFrame.cannonballs.remove(this);
         }
         Color color = Color.BLACK;
         graphics.setColor(color);
@@ -42,15 +45,16 @@ public class Cannonball
             case UP:y -= SPEED;break;
             case RIGHT:x += SPEED;break;
             case DOWN:y += SPEED;break;
+            default : break;
         }
-        if(x < 0||y < 0||x > tank_frame.getWidth()|| y >tank_frame.getHeight())
+        if(x < 0||y < 0||x > tankFrame.getWidth()|| y > tankFrame.getHeight())
         {
             live = false;
         }
-        if(Math.abs(tank_frame.enemy1.x-x) <= 50 && Math.abs(tank_frame.enemy1.y-y) <= 50)
+        if(Math.abs(tankFrame.enemy1.x-x) <= 50 && Math.abs(tankFrame.enemy1.y-y) <= 50)
         {
             live = false;
-            tank_frame.enemy1.live = false;
+            tankFrame.enemy1.live = false;
         }
     }
 }

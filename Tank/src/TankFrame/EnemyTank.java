@@ -2,9 +2,12 @@ package TankFrame;
 
 import java.awt.*;
 
-public class enemyTank extends Tank
+/**
+ * @author 吴乐
+ */
+public class EnemyTank extends Tank
 {
-    public enemyTank()
+    public EnemyTank()
     {
         x = 100;
         y = 100;

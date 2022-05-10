@@ -2,6 +2,9 @@ package TankFrame;
 
 import java.awt.*;
 
+/**
+ * @author 吴乐
+ */
 public class Tank
 {
     int x;
@@ -11,7 +14,7 @@ public class Tank
     int speed;
     Dir dir;
     boolean moving = false;
-    Tank_Frame tank_frame;
+    TankFrame tankFrame;
     boolean live;
 
     public Tank()
@@ -19,7 +22,7 @@ public class Tank
         super();
     }
 
-    public Tank(int x,int y,int speed,Dir dir,Tank_Frame tank_frame)
+    public Tank(int x, int y, int speed, Dir dir, TankFrame tankFrame)
     {
         super();
         live = true;
@@ -27,7 +30,7 @@ public class Tank
         this.y = y;
         this.speed = speed;
         this.dir = dir;
-        this.tank_frame = tank_frame;
+        this.tankFrame = tankFrame;
     }
 
     public void paint(Graphics graphics)
@@ -37,7 +40,8 @@ public class Tank
             graphics.drawString("die",100,100);
             return;
         }
-        graphics.fillRect(x,y,width,height);//x,y,宽，高.向右x，向下y
+        graphics.fillRect(x,y,width,height);
+        //x,y,宽，高.向右x，向下y
         //窗口出来时调用以此，以后，每次被盖住后，再出来，又会调用。
         move();
     }
@@ -60,7 +64,7 @@ public class Tank
 
     public void fire()
     {
-        tank_frame.cannonballs.add(new Cannonball(this.x,this.y,this.dir,this.tank_frame));
+        tankFrame.cannonballs.add(new Cannonball(this.x,this.y,this.dir,this.tankFrame));
     }
 
     public void setMoving(boolean moving)

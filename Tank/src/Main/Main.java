@@ -1,17 +1,21 @@
 package Main;
 
-import TankFrame.Tank_Frame;
+import TankFrame.TankFrame;
 
+/**
+ * @author 吴乐
+ */
 public class Main
 {
     public static void main(String[] args) throws InterruptedException
     {
-        Tank_Frame tank_frame = new Tank_Frame();
+        TankFrame tankFrame = new TankFrame();
 
         while(true)
         {
-            Thread.sleep(10);//停10ms
-            tank_frame.repaint();
+            Thread.sleep(10);
+            //停10ms
+            tankFrame.repaint();
         }
     }
 }
