@@ -7,7 +7,6 @@ import java.awt.*;
  */
 public class Cannonball
 {
-
     final static int SPEED = 5;
     int x;
     int y;
@@ -67,11 +66,9 @@ public class Cannonball
     }
 
     public void kill(Tank tank)
-            //与坦克比较距离，如果碰到了，就判断是敌方就杀掉。
-    {
-
-        Rectangle rectangle1 = new Rectangle(this.x,this.y,50,50);
-        Rectangle rectangle2 = new Rectangle(tank.x,tank.y,50,50);
+    {//与坦克比较距离，如果碰到了，就判断是敌方就杀掉。
+        Rectangle rectangle1 = new Rectangle(this.x,this.y,40,40);
+        Rectangle rectangle2 = new Rectangle(tank.x,tank.y,40,40);
         if(rectangle1.intersects(rectangle2) && this.camp != tank.camp)
         {
             tank.live = false;

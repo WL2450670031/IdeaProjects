@@ -28,18 +28,19 @@ public class TankFrame extends Frame
                     new Tank(x,y, TANK_SPEED,Dir.DOWN,CAMP.ENEMY,this)
                     //2号坦克
             };
-
     List<Cannonball> cannonballs = new ArrayList<>();
 
     boolean left1 = false;
     boolean right1 = false;
     boolean up1 = false;
     boolean down1 = false;
+//支持1号坦克移动
 
     boolean left2 = false;
     boolean right2 = false;
     boolean up2 = false;
     boolean down2 = false;
+//支持2号坦克移动
 
     public TankFrame()
     {
@@ -98,12 +99,10 @@ public class TankFrame extends Frame
         { //画坦克
             tanks[i].paint(graphics);
         }
-
         for(int i = 0;i < cannonballs.size();i++)
         {//画子弹
             cannonballs.get(i).paint(graphics);
         }
-
         for(int i = 0;i < cannonballs.size();i++)
         {
             for(int j = 0;j < tanksNumber;j++)
@@ -162,7 +161,6 @@ public class TankFrame extends Frame
                     break;
                 default:break;
             }
-
             setTankDir();
             //默认调用paint方法.可以起到刷新的作用
             //paint方法不能直接调用，因为画笔只有系统给，不能给系统.
@@ -238,7 +236,6 @@ public class TankFrame extends Frame
                 tanks[0].setDir(Dir.DOWN);
             }
         }
-
         if(!(left2 || right2 ||up2 ||down2))
         {
             tanks[1].setMoving(false);

@@ -37,7 +37,9 @@ public class Tank
     {
         if(!live)
         {
-            graphics.drawString("die",100,100);
+            camp = null;
+            dir = null;
+            graphics.drawString("游戏结束",this.x,this.y);
             return;
         }
         switch(dir)
@@ -79,9 +81,11 @@ public class Tank
 
     public void fire()
     {
-        tankFrame.cannonballs.add(new Cannonball(this.x,this.y,this.dir,camp,this.tankFrame));
+        if(live)
+        {
+            tankFrame.cannonballs.add(new Cannonball(this.x, this.y, this.dir, camp, this.tankFrame));
+        }
     }
-
 
     public void setMoving(boolean moving)
     {
