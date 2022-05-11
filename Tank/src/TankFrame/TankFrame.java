@@ -17,19 +17,29 @@ public class TankFrame extends Frame
     final static int FRAME_HEIGHT = 600;
     int x = 200;
     int y = 200;
-    private final static int TANK_SPEED = 5;
+    private final static int TANK_SPEED = 3;
+    int tanksNumber = 2;
     //移动速度
+    
+    Tank[] tanks =
+            {
+                    new Tank(100,100, TANK_SPEED,Dir.UP,CAMP.WE,this),
+                    //1号坦克
+                    new Tank(x,y, TANK_SPEED,Dir.DOWN,CAMP.ENEMY,this)
+                    //2号坦克
+            };
 
-    Dir dir = Dir.UP;
-
-    Tank tank = new Tank(x,y, TANK_SPEED,dir,this);
-
-    EnemyTank enemy1 = new EnemyTank();
     List<Cannonball> cannonballs = new ArrayList<>();
-    boolean left = false;
-    boolean right = false;
-    boolean up = false;
-    boolean down = false;
+
+    boolean left1 = false;
+    boolean right1 = false;
+    boolean up1 = false;
+    boolean down1 = false;
+
+    boolean left2 = false;
+    boolean right2 = false;
+    boolean up2 = false;
+    boolean down2 = false;
 
     public TankFrame()
     {
@@ -84,12 +94,25 @@ public class TankFrame extends Frame
     {
         graphics.drawString("子弹数量为:" + cannonballs.size(),10,60);
 
-        tank.paint(graphics);
-        enemy1.paint(graphics);
+        for(int i = 0;i < tanksNumber;i++)
+        { //画坦克
+            tanks[i].paint(graphics);
+        }
+
         for(int i = 0;i < cannonballs.size();i++)
-        {
+        {//画子弹
             cannonballs.get(i).paint(graphics);
         }
+
+        for(int i = 0;i < cannonballs.size();i++)
+        {
+            for(int j = 0;j < tanksNumber;j++)
+            {
+                cannonballs.get(i).kill(tanks[j]);
+                //将每个子弹与坦克比较，如果撞上了，就判断是否为敌方。
+            }
+        }
+
         //使用下面这个循环的话：里面的迭代器打印，加上Cannonball的删除会报错，会发生越界
 //        for (Cannonball value : cannonballs)
 //        {
@@ -105,20 +128,37 @@ public class TankFrame extends Frame
 
             switch(key)
             {
+                //坦克1操作方式
                 case KeyEvent.VK_LEFT:
-                    left = true;
+                    left1 = true;
                     break;
                 case KeyEvent.VK_UP:
-                    up = true;
+                    up1 = true;
                     break;
                 case KeyEvent.VK_RIGHT:
-                    right = true;
+                    right1 = true;
                     break;
                 case KeyEvent.VK_DOWN:
-                    down = true;
+                    down1 = true;
+                    break;
+                case KeyEvent.VK_NUMPAD0:
+                    tanks[0].fire();
+                    break;
+                    //坦克2操作方式
+                case KeyEvent.VK_A:
+                    left2 = true;
+                    break;
+                case KeyEvent.VK_W:
+                    up2 = true;
+                    break;
+                case KeyEvent.VK_D:
+                    right2 = true;
+                    break;
+                case KeyEvent.VK_S:
+                    down2 = true;
                     break;
                 case KeyEvent.VK_SPACE:
-                    tank.fire();
+                    tanks[1].fire();
                     break;
                 default:break;
             }
@@ -136,47 +176,91 @@ public class TankFrame extends Frame
             switch(key)
             {
                 case KeyEvent.VK_LEFT:
-                    left = false;
+                    left1 = false;
                     break;
                 case KeyEvent.VK_UP:
-                    up = false;
+                    up1 = false;
                     break;
                 case KeyEvent.VK_RIGHT:
-                    right = false;
+                    right1 = false;
                     break;
                 case KeyEvent.VK_DOWN:
-                    down = false;
+                    down1 = false;
                     break;
-                default:break;
+                case KeyEvent.VK_NUMPAD0:
+                    tanks[0].fire();
+                    break;
+                case KeyEvent.VK_A:
+                    left2 = false;
+                    break;
+                case KeyEvent.VK_W:
+                    up2 = false;
+                    break;
+                case KeyEvent.VK_D:
+                    right2 = false;
+                    break;
+                case KeyEvent.VK_S:
+                    down2 = false;
+                    break;
+                case KeyEvent.VK_SPACE:
+                    tanks[1].fire();
+                    break;
+                default:
+                    break;
             }
             setTankDir();
         }
     }
 
-    public void setTankDir()
+    public void setTankDir()    //让坦克能动
     {
-        if(!(left || right ||up ||down))
+        if(!(left1 || right1 ||up1 ||down1))
         {
-            tank.setMoving(false);
+            tanks[0].setMoving(false);
         }
         else
         {
-            tank.setMoving(true);
-            if(left)
+            tanks[0].setMoving(true);
+            if(left1)
             {
-                tank.setDir(Dir.LEFT);
+                tanks[0].setDir(Dir.LEFT);
             }
-            if(right)
+            if(right1)
             {
-                tank.setDir(Dir.RIGHT);
+                tanks[0].setDir(Dir.RIGHT);
             }
-            if(up)
+            if(up1)
             {
-                tank.setDir(Dir.UP);
+                tanks[0].setDir(Dir.UP);
             }
-            if(down)
+            if(down1)
             {
-                tank.setDir(Dir.DOWN);
+                tanks[0].setDir(Dir.DOWN);
+            }
+        }
+
+        if(!(left2 || right2 ||up2 ||down2))
+        {
+            tanks[1].setMoving(false);
+        }
+        else
+        {
+            tanks[1].setMoving(true);
+            if(left2)
+            {
+                tanks[1].setDir(Dir.LEFT);
+            }
+            if(right2)
+            {
+                tanks[1].setDir(Dir.RIGHT);
+            }
+            if(up2)
+            {
+                tanks[1].setDir(Dir.UP);
+            }
+            if(down2)
+            {
+                tanks[1].setDir(Dir.DOWN);
             }
         }
     }

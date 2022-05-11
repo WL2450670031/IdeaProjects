@@ -28,7 +28,6 @@ public class ResourceMgr
             tankDown  = ImageIO.read(Objects.requireNonNull(ResourceMgr.class.getClassLoader().getResourceAsStream("Image/down.jpg")));
             ballRight = ImageIO.read(Objects.requireNonNull(ResourceMgr.class.getClassLoader().getResourceAsStream("Image/ballRight.jpg")));
             ballUp    = ImageIO.read(Objects.requireNonNull(ResourceMgr.class.getClassLoader().getResourceAsStream("Image/ballUp.jpg")));
-
         }
         catch (IOException e) {
             e.printStackTrace();

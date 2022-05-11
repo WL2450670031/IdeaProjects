@@ -9,10 +9,9 @@ public class Tank
 {
     int x;
     int y;
-    int width = 50;
-    int height = 50;
     int speed;
     Dir dir;
+    CAMP camp;
     boolean moving = false;
     TankFrame tankFrame;
     boolean live;
@@ -22,7 +21,7 @@ public class Tank
         super();
     }
 
-    public Tank(int x, int y, int speed, Dir dir, TankFrame tankFrame)
+    public Tank(int x, int y, int speed, Dir dir,CAMP camp, TankFrame tankFrame)
     {
         super();
         live = true;
@@ -79,8 +78,9 @@ public class Tank
 
     public void fire()
     {
-        tankFrame.cannonballs.add(new Cannonball(this.x,this.y,this.dir,this.tankFrame));
+        tankFrame.cannonballs.add(new Cannonball(this.x,this.y,this.dir,camp,this.tankFrame));
     }
+
 
     public void setMoving(boolean moving)
     {

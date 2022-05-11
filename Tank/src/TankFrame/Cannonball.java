@@ -8,22 +8,21 @@ import java.awt.*;
 public class Cannonball
 {
 
-    final static int SPEED = 10;
+    final static int SPEED = 5;
     int x;
     int y;
     Dir dir;
-    static int width = 50;
-    static int height = 50;
+    CAMP camp;
     TankFrame tankFrame;
     boolean live;
-    public Cannonball(int x, int y, Dir dir, TankFrame tankFrame)
+    public Cannonball(int x, int y, Dir dir,CAMP camp, TankFrame tankFrame)
     {
         live = true;
         this.x = x;
         this.y = y;
         this.dir = dir;
         this.tankFrame = tankFrame;
-
+        this.camp = camp;
     }
 
     public void paint(Graphics graphics)
@@ -65,10 +64,18 @@ public class Cannonball
         {
             live = false;
         }
-        if(Math.abs(tankFrame.enemy1.x-x) <= 50 && Math.abs(tankFrame.enemy1.y-y) <= 50)
+    }
+
+    public void kill(Tank tank)
+            //与坦克比较距离，如果碰到了，就判断是敌方就杀掉。
+    {
+
+        Rectangle rectangle1 = new Rectangle(this.x,this.y,50,50);
+        Rectangle rectangle2 = new Rectangle(tank.x,tank.y,50,50);
+        if(rectangle1.intersects(rectangle2) && this.camp != tank.camp)
         {
-            live = false;
-            tankFrame.enemy1.live = false;
+            tank.live = false;
+            this.live = false;
         }
     }
 }
