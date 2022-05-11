@@ -30,6 +30,7 @@ public class Tank
         this.speed = speed;
         this.dir = dir;
         this.tankFrame = tankFrame;
+        this.camp = camp;
     }
 
     public void paint(Graphics graphics)
