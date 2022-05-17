@@ -8,7 +8,7 @@
     <div style="color:lightskyblue; font-size:20px">163邮箱:wl1030ds@163.com</div>
     <div style="color:lightskyblue; font-size:20px">谷歌邮箱:WL1030DS@gmail.com</div>
 </p>
-<div>目前正在学习算法和java。</div>
+<div>目前正在学习算法，Java及html/css/js，以后打算学习c艹,想做一个游戏。</div>
 <br>
 <div>加油！</div>
 <br>
