@@ -24,8 +24,7 @@ public class FileReaderTest
             }
         } catch (IOException e) {
             e.printStackTrace();
-        }finally
-        {
+        }finally {
             if(fileReader != null)
             {
                 fileReader.close();
