@@ -6,6 +6,8 @@ public class Dog implements Serializable//如果要实现序列化某个类的�
 {
     private String name;
     private int age;
+    //SerializableUID,序列化版本号，可以提高兼容性.
+    private static final long serializableUID = 1L;
 
     public Dog(String name, int age) {
         this.name = name;
