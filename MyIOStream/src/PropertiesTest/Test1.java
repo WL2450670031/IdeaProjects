@@ -1,9 +1,9 @@
 package PropertiesTest;
 
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.Properties;
 
 public class Test1
@@ -14,7 +14,7 @@ public class Test1
         properties.setProperty("charset","utf8");
         properties.setProperty("password","12345");
 
-        properties.store(new FileOutputStream("MyIOStream/src/PropertiesTest/sql"),null);
+        properties.store(Files.newOutputStream(Paths.get("MyIOStream/src/PropertiesTest/sql")),null);
         PrintStream printStream = new PrintStream(System.out);
         printStream.print("保存成功");
     }
