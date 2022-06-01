@@ -19,7 +19,7 @@ public class ClientTest
             int port = 9999;
             //2.创建Socket连接
             socket = new Socket("127.0.0.1",port);
-            //3.发生消息，io流
+            //3.发送消息，io流
             outputStream = socket.getOutputStream();
             outputStream.write("你好，我是吴乐".getBytes(StandardCharsets.UTF_8));
         }catch (IOException e)
