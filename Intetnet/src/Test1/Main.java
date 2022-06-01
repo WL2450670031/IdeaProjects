@@ -12,7 +12,7 @@ public class Main
 {
     public static void main(String[] args) throws IOException
     {
-        try(ServerSocket serverSocket = new ServerSocket(8189))
+        try(ServerSocket serverSocket = new ServerSocket(8080))
                 //监听端口服务器套接字
         {
             try(Socket socket = serverSocket.accept())
