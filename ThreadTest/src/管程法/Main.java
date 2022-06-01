@@ -30,8 +30,6 @@ class Pro extends Thread
          }
      }
 }
-
-
 //消费者
 class Shopper extends Thread
 {
