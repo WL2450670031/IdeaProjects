@@ -1,13 +1,8 @@
 package FileUpdate;
 
-import jdk.internal.util.xml.impl.Input;
-import sun.nio.cs.ext.GBK;
-
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.nio.charset.StandardCharsets;
-
 public class ServerTest
 {
     public static void main(String[] args) throws IOException {

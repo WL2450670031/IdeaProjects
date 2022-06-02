@@ -1,9 +1,5 @@
 package FileUpdate;
 
-import com.sun.org.apache.xerces.internal.impl.io.UTF8Reader;
-import com.sun.xml.internal.bind.v2.runtime.output.UTF8XmlOutput;
-import sun.text.normalizer.UTF16;
-
 import java.io.*;
 import java.net.InetAddress;
 import java.net.Socket;
