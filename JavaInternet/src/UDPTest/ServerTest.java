@@ -1,5 +1,5 @@
 package UDPTest;
-//接受端
+//接收端
 import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
@@ -12,7 +12,7 @@ public class ServerTest
         //1.开放端口
         DatagramSocket socket = new DatagramSocket(9000);
 
-        //2.接受数据包
+        //2.接收数据包
         byte[] buf = new byte[1024];
         DatagramPacket packet = new DatagramPacket(buf,0,buf.length);
 
@@ -23,5 +23,4 @@ public class ServerTest
         //3.关闭连接
         socket.close();
     }
-
 }
