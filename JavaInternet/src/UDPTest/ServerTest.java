@@ -1,14 +1,14 @@
 package UDPTest;
-
+//接受端
 import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
-import java.net.SocketException;
 
 //UDP没有服务端的概念
 public class ServerTest
 {
-    public static void main(String[] args) throws IOException {//等待客户端连接
+    public static void main(String[] args) throws IOException
+    {
         //1.开放端口
         DatagramSocket socket = new DatagramSocket(9000);
 
