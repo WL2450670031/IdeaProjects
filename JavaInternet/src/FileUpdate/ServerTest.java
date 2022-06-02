@@ -1,13 +1,12 @@
 package FileUpdate;
 
 import jdk.internal.util.xml.impl.Input;
+import sun.nio.cs.ext.GBK;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.nio.charset.StandardCharsets;
 
 public class ServerTest
 {
@@ -33,7 +32,12 @@ public class ServerTest
             System.out.println("已经上传了" + a +"byte");
         }
         System.out.println("上传完毕，文件大小为:" +a+"byte");
-        //5.关闭流
+
+        //5.通知客户端接受完毕。
+        OutputStream outputStream = socket.getOutputStream();
+        outputStream.write("上传完毕".getBytes());
+
+        //6.关闭流
         fileOutputStream.close();
         inputStream.close();
         socket.close();

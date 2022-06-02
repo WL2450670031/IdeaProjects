@@ -1,9 +1,10 @@
 package FileUpdate;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.OutputStream;
+import com.sun.org.apache.xerces.internal.impl.io.UTF8Reader;
+import com.sun.xml.internal.bind.v2.runtime.output.UTF8XmlOutput;
+import sun.text.normalizer.UTF16;
+
+import java.io.*;
 import java.net.InetAddress;
 import java.net.Socket;
 
@@ -33,7 +34,19 @@ public class ClientTest
             outputStream.write(buf,0,length);
         }
 
+        //5.确定服务器接受完毕才端口连接。
+        socket.shutdownOutput();//通知服务器上传完毕
+        InputStream inputStream = socket.getInputStream();
+        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+        byte[] buf2 = new byte[1024];
+        int length2;
+        while((length2 = inputStream.read(buf2)) != -1)
+        {
+            byteArrayOutputStream.write(buf2,0,length2);
+        }
+        System.out.println(byteArrayOutputStream);
         //5.关闭资源,先建后关
+        byteArrayOutputStream.close();
         fileInputStream.close();
         outputStream.close();
         socket.close();
