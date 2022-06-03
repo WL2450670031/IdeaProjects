@@ -11,8 +11,8 @@ public class TestSocket
         System.out.println(inetSocketAddress1);
         System.out.println(inetSocketAddress2);
 
-        System.out.println(inetSocketAddress1.getAddress());
-        System.out.println(inetSocketAddress1.getHostName());//获取主机名字
-        System.out.println(inetSocketAddress1.getPort());//获取端口
+        System.out.println(inetSocketAddress2.getAddress());
+        System.out.println(inetSocketAddress2.getHostName());//获取主机名字
+        System.out.println(inetSocketAddress2.getPort());//获取端口
     }
 }
